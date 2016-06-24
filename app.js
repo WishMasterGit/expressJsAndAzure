@@ -1,10 +1,24 @@
 "use strict";
 var express = require('express');
 var bodyParser = require('body-parser');
+
 var MathController = require('./controllers/MathController.js');
 var PuzzleController = require('./controllers/PuzzleController');
 var app = express();
 
+var authorizationHandler = function (req, res, next) {
+  var authorizationToken = req.header("Authorization");
+  if (authorizationToken === "super-secret-key")
+  {
+    next();
+  }
+  else{
+    res.send("Not Authorized");
+  }
+};
+
+
+app.use(authorizationHandler);
 app.use(bodyParser.json());
 
 var mathController = new MathController(app);

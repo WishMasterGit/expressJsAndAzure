@@ -9,13 +9,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "apicache": "0.0.14",
     "azure-storage": "^1.0.1",
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
     "nconf": "^0.8.4",
     "node-uuid": "^1.4.7",
     "q": "../q/q.js"
-
   },
   "devDependencies": {
     "body-parser": "^1.15.1"
